@@ -2,7 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const request = require("request");
 const https =require("https");
-const { dir } = require("console");
+
 const app = express();
 
 app.use(express.static("public"));
@@ -15,7 +15,7 @@ app.post("/", function (req, res) {
   const firstname = req.body.fname;
   const lastname = req.body.lname;
   const Email = req.body.email;
-  // console.log(firstname, lastname, Email);
+
 
   const data = {
     members: [
@@ -46,7 +46,7 @@ app.post("/", function (req, res) {
     }
 
     response.on("data",function(data){
-      // console.log(JSON.parse(data));
+     
     })
   });
    request.write(jsonData);
@@ -63,7 +63,3 @@ app.listen(process.env.PORT || 3000, function () {
 
 });
 
-
-//unique listid 76431d7e32
-// api key e8b75da39fe1d385163b71c74da3502d-us6
-           //e8b75da39fe1d385163b71c74da3502d-us6   ></button>  9da61b02-5f41-49d9-b942-9d55cbe85a29
